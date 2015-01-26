@@ -1,6 +1,12 @@
 package weidemann;
 
+import java.io.PrintWriter;
+import java.util.ArrayList;
+
 public interface ViewBase {
-	void createFelder();
-	void show();
+	ArrayList<String> itsHTDoc = new ArrayList<String>();
+	
+	void createFelder(String theCase);
+	void deleteFelder();
+	void show(PrintWriter thePW);
 }

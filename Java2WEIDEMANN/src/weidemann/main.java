@@ -1,6 +1,7 @@
 package weidemann;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,6 +19,10 @@ public class main extends HttpServlet {
     	super();
     }
     
+    private void setControl(String theControl) {
+    	itsControl = itsControlFactory.getControl(theControl);
+    }
+    
     public void setItsControl(ControlBase theControl){
     	itsControl = theControl;
     }
@@ -27,10 +32,24 @@ public class main extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		itsControl.doPost(request, response);
-		//String aChoice = request.getParameter("gegenstand_art");
-		//itsView = itsViewFactory.getView(aChoice);
-		//doGet(request, response);
+		switch(itsControl.doPost(request, response)) {
+			case 1:
+				setControl("INV");
+				break;
+			case 2:
+				setControl("IMM");
+				break;
+			case 3:
+				setControl("AGG");
+				break;
+			case -1:
+				setControl("MAIN");
+				break;
+			default:
+				break;
+		}
+		
+		doGet(request, response);
 	}
 
 }

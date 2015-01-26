@@ -16,8 +16,18 @@ public class ControlFactory extends AbstractFactory {
 
 	@Override
 	ControlBase getControl(String theControl) {
-		// TODO Auto-generated method stub
-		return null;
+		switch (theControl) {
+		case "IMM":
+			return new ImmobilieControl();
+		case "INV":
+			return new InventarControl();
+		case "AGG":
+			return new AGGControl();
+		case "MAIN":
+			return new MainControl();
+		default:
+			return new MainControl();
+		}
 	}
 
 }

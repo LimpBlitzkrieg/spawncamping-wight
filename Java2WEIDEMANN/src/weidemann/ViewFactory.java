@@ -4,25 +4,18 @@ public class ViewFactory extends AbstractFactory {
 
 	@Override
 	ViewBase getView(String theView) {
-		
-		if(theView == null){
-	         return null;
-	      }		
-	      
-	      if(theView.equalsIgnoreCase("AGG")){
-	         return new AGGView();
-	         
-	      }else if(theView.equalsIgnoreCase("IMM")){
-	         return new ImmobilieView();
-	         
-	      }else if(theView.equalsIgnoreCase("INV")){
-	         return new InventarView();
-	         
-	      }else if(theView.equalsIgnoreCase("MAIN")){
-		         return new MainView();
-	      }
-		
-		return null;
+		switch (theView) {
+		case "IMM":
+			return new ImmobilieView();
+		case "INV":
+			return new InventarView();
+		case "AGG":
+			return new AGGView();
+		case "MAIN":
+			return new MainView();
+		default:
+			return new MainView();
+		}
 	}
 
 	@Override
