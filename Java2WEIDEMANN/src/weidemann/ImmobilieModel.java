@@ -1,7 +1,14 @@
 package weidemann;
 
+/**
+ * The Class ImmobilieModel.
+ * Model class for Immobilie.
+ */
 public class ImmobilieModel implements ModelBase{
 	
+	/*
+	 * @see weidemann.ModelBase#setContent(java.lang.String[])
+	 */
 	@Override
 	public void setContent(String[] theContent) {
 		itsData[0] = "imm_street";
@@ -22,6 +29,9 @@ public class ImmobilieModel implements ModelBase{
 		
 	}
 
+	/*
+	 * @see weidemann.ModelBase#getContent()
+	 */
 	@Override
 	public String[] getContent() {
 		return itsData;

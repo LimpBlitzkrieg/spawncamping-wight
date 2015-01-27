@@ -2,8 +2,15 @@ package weidemann;
 
 import java.io.PrintWriter;
 
+/**
+ * The Class ImmobilieView.
+ * View class for Immobilie.
+ */
 public class ImmobilieView implements ViewBase{
 
+	/*
+	 * @see weidemann.ViewBase#createFelder(java.lang.String)
+	 */
 	@Override
 	public void createFelder(String theCase) {
 		
@@ -108,11 +115,17 @@ public class ImmobilieView implements ViewBase{
 		}
 	}
 	
+	/*
+	 * @see weidemann.ViewBase#deleteFelder()
+	 */
 	@Override
 	public void deleteFelder() {
 		itsHTDoc.clear();
 	}
 
+	/*
+	 * @see weidemann.ViewBase#show(java.io.PrintWriter)
+	 */
 	@Override
 	public void show(PrintWriter aPW) {
 		for(String ausgabe : itsHTDoc) {

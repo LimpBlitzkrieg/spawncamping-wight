@@ -1,7 +1,17 @@
 package weidemann;
 
+/**
+ * The Class FactoryProducer.
+ */
 public class FactoryProducer {
-	   public static AbstractFactory getFactory(String choice){
+	   
+   	/**
+   	 * Gets the factory.
+   	 *
+   	 * @param choice the choice
+   	 * @return the factory
+   	 */
+   	public static AbstractFactory getFactory(String choice){
 	   
 	      if(choice.equalsIgnoreCase("VIEW")){
 	         return new ViewFactory();

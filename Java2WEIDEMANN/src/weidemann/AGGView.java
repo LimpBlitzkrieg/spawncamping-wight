@@ -1,9 +1,16 @@
 package weidemann;
 
 import java.io.PrintWriter;
-
+ 
+/**
+ * The Class AGGView.
+ * View class for Ausstattungsgegenstand.
+ */
 public class AGGView implements ViewBase{
 
+	/* (non-Javadoc)
+	 * @see weidemann.ViewBase#createFelder(java.lang.String)
+	 */
 	@Override
 	public void createFelder(String theCase) {
 		
@@ -104,11 +111,17 @@ public class AGGView implements ViewBase{
 		}
 	}
 	
+	/*
+	 * @see weidemann.ViewBase#deleteFelder()
+	 */
 	@Override
 	public void deleteFelder() {
 		itsHTDoc.clear();
 	}
 
+	/*
+	 * @see weidemann.ViewBase#show(java.io.PrintWriter)
+	 */
 	@Override
 	public void show(PrintWriter aPW) {
 		for(String ausgabe : itsHTDoc) {

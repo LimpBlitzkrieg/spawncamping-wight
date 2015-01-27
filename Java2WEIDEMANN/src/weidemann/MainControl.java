@@ -6,18 +6,28 @@ import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+ 
+/**
+ * The Class MainControl.
+ * Control class for MainView.
+ */
 public class MainControl implements ControlBase{	
-
-	ModelBase itsModel = itsModelFactory.getModel("MAIN");
+	
+	/** The view. */
 	ViewBase itsView = itsViewFactory.getView("MAIN");
 	
+	/*
+	 * @see weidemann.ControlBase#parseXML()
+	 */
 	@Override
 	public void parseXML() {
-		// TODO Auto-generated method stub
+		// MainModel and XML-parsing not necessary until now.
 		
 	}
 
+	/*
+	 * @see weidemann.ControlBase#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
@@ -31,6 +41,9 @@ public class MainControl implements ControlBase{
 		
 	}
 
+	/*
+	 * @see weidemann.ControlBase#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	@Override
 	public int doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

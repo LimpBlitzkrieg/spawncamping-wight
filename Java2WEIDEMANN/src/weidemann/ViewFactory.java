@@ -1,7 +1,13 @@
 package weidemann;
 
+/**
+ * A factory for creating View objects.
+ */
 public class ViewFactory extends AbstractFactory {
 
+	/*
+	 * @see weidemann.AbstractFactory#getView(java.lang.String)
+	 */
 	@Override
 	ViewBase getView(String theView) {
 		switch (theView) {
@@ -18,15 +24,21 @@ public class ViewFactory extends AbstractFactory {
 		}
 	}
 
+	/*
+	 * @see weidemann.AbstractFactory#getModel(java.lang.String)
+	 */
 	@Override
 	ModelBase getModel(String theModel) {
-		// TODO Auto-generated method stub
+		// Mandatory overrides
 		return null;
 	}
 
+	/*
+	 * @see weidemann.AbstractFactory#getControl(java.lang.String)
+	 */
 	@Override
 	ControlBase getControl(String theControl) {
-		// TODO Auto-generated method stub
+		// Mandatory overrides
 		return null;
 	}
 

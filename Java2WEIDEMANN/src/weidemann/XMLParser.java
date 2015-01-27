@@ -16,8 +16,19 @@ import javax.xml.transform.stream.StreamResult;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
+/**
+ * The Class XMLParser.
+ * Creates a XML-Document from a given String[] of Content 'theContent' and a Filename 'theFilename'.
+ */
 public class XMLParser {
 
+	/**
+	 * Parses the xml.
+	 * Creates a new XML-document and writes 'theContent' into its nodes.
+	 *
+	 * @param theContent the content
+	 * @param theFilename the filename
+	 */
 	void parseXML(String[] theContent, String theFilename) {
 		try {
 			 

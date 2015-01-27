@@ -1,7 +1,14 @@
 package weidemann;
 
+/**
+ * The Class InventarModel.
+ * Model class for Inventargegenstand.
+ */
 public class InventarModel implements ModelBase{
 		
+	/*
+	 * @see weidemann.ModelBase#setContent(java.lang.String[])
+	 */
 	@Override
 	public void setContent(String[] theContent) {
 		itsData[0] = "inv_bez";
@@ -17,6 +24,9 @@ public class InventarModel implements ModelBase{
 	}
 
 
+	/*
+	 * @see weidemann.ModelBase#getContent()
+	 */
 	@Override
 	public String[] getContent() {
 		return itsData;

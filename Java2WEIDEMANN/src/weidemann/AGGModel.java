@@ -1,7 +1,14 @@
 package weidemann;
 
+/**
+ * The Class AGGModel.
+ * Model class for Ausstattungsgegenstand.
+ */
 public class AGGModel implements ModelBase{
 	
+	/* (non-Javadoc)
+	 * @see weidemann.ModelBase#setContent(java.lang.String[])
+	 */
 	@Override
 	public void setContent(String[] theContent) {
 		itsData[0] = "agg_ort";
@@ -13,6 +20,9 @@ public class AGGModel implements ModelBase{
 		}
 	}
 
+	/* (non-Javadoc)
+	 * @see weidemann.ModelBase#getContent()
+	 */
 	@Override
 	public String[] getContent() {
 		return itsData;

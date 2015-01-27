@@ -8,29 +8,50 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+/**
+ * The Class main.
+ * Main servlet to be executed on tomcat server.
+ * BE ADVISED: Minimum required tomcat version is 8.0 for this and all according servlets!
+ * Get the latest tomcat server at: http://tomcat.apache.org/
+ */
 @WebServlet("/main")
 public class main extends HttpServlet {
+	
+	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
 	
+	/** The control factory. */
 	AbstractFactory itsControlFactory = FactoryProducer.getFactory("CONTROL");
+	
+	/** The main control. */
 	ControlBase itsControl = itsControlFactory.getControl("MAIN");
        
+    /**
+     * Instantiates a new main.
+     */
     public main() {
     	super();
     }
     
+    /**
+     * Sets the control.
+     *
+     * @param theControl the new control
+     */
     private void setControl(String theControl) {
     	itsControl = itsControlFactory.getControl(theControl);
     }
     
-    public void setItsControl(ControlBase theControl){
-    	itsControl = theControl;
-    }
-    
+	/*
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		itsControl.doGet(request, response);
 	}
 
+	/*
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		switch(itsControl.doPost(request, response)) {
 			case 1:
