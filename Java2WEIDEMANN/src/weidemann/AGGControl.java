@@ -68,14 +68,20 @@ public class AGGControl implements ControlBase {
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
 		String[] aContent = new String[2];
-		int aBack = Integer.parseInt(request.getParameter("return"));
+		int aBack = 0;
 		String aPlace = request.getParameter("agg_ort");
 		String aDate = request.getParameter("agg_date");
 
+		try {
+			aBack = Integer.parseInt(request.getParameter("return"));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
 		if (aBack == 1)
 			return -1;
 
-		else if (aPlace.isEmpty() || !validateDate(aDate)) {
+		else if (aPlace == null || aPlace.isEmpty() || !validateDate(aDate)) {
 			itsView.createFelder("Error");
 			itsView.show(pw);
 			pw.flush();

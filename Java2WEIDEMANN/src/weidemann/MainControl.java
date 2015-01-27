@@ -52,7 +52,7 @@ public class MainControl implements ControlBase{
 		response.setContentType("text/html");
 		String aChoice = request.getParameter("gegenstand_art");		
 		
-		if( aChoice.isEmpty() ) {
+		if( aChoice == null || aChoice.isEmpty() ) {
 			itsView.createFelder("Error");
 			itsView.show(pw);
 			return -1;

@@ -68,11 +68,17 @@ public class InventarControl implements ControlBase {
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
 		String[] aContent = new String[3];
-		int aBack = Integer.parseInt(request.getParameter("return"));
+		int aBack = 0;
 		String aString = request.getParameter("inv_bez");
 		String aDate = request.getParameter("inv_date");
 		String aPerson = request.getParameter("inv_responsible");
 
+		try {
+			aBack = Integer.parseInt(request.getParameter("return"));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
 		if (aBack == 1)
 			return -1;
 

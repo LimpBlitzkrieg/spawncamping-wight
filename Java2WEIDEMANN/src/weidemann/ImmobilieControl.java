@@ -67,7 +67,7 @@ public class ImmobilieControl implements ControlBase {
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
 		String[] aContent = new String[6];
-		int aBack = Integer.parseInt(request.getParameter("return"));
+		int aBack = 0;
 		String aStreet = request.getParameter("imm_street");
 		String aHnum = request.getParameter("imm_hnum");
 		String aPLZ = request.getParameter("imm_plz");
@@ -75,6 +75,12 @@ public class ImmobilieControl implements ControlBase {
 		String aCount = request.getParameter("imm_rooms");
 		String aHasElevator = request.getParameter("imm_elevator");
 
+		try {
+			aBack = Integer.parseInt(request.getParameter("return"));
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		
 		if (aBack == 1)
 			return -1;
 
