@@ -10,6 +10,9 @@ public class InventarModel implements ModelBase{
 		itsData[3] = theContent[1];
 		itsData[4] = "inv_responsible";
 		itsData[5] = theContent[2];
+		for(int i = 6; i < itsData.length; i++) {
+			itsData[i] = null;
+		}
 		
 	}
 

@@ -16,6 +16,9 @@ public class ImmobilieModel implements ModelBase{
 		itsData[9] = theContent[4];
 		itsData[10] = "imm_elevator";
 		itsData[11] = theContent[5];
+		for(int i = 12; i < itsData.length; i++) {
+			itsData[i] = null;
+		}
 		
 	}
 

@@ -8,6 +8,9 @@ public class AGGModel implements ModelBase{
 		itsData[1] = theContent[0];
 		itsData[2] = "agg_date";
 		itsData[3] = theContent[1];
+		for(int i = 4; i < itsData.length; i++) {
+			itsData[i] = null;
+		}
 	}
 
 	@Override
