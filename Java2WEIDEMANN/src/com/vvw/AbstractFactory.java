@@ -1,9 +1,9 @@
-package weidemann;
+package com.vvw;
 
 /**
  * A factory for creating Abstract objects.
  *
- * @author weidemann
+ * @author com.vvw
  */
 public abstract class AbstractFactory {
 	

@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -27,7 +27,7 @@ public class ImmobilieControl implements ControlBase {
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#parseXML()
+	 * @see com.vvw.ControlBase#parseXML()
 	 */
 	@Override
 	public void parseXML() {
@@ -39,7 +39,7 @@ public class ImmobilieControl implements ControlBase {
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#doGet(javax.servlet.http.HttpServletRequest,
+	 * @see com.vvw.ControlBase#doGet(javax.servlet.http.HttpServletRequest,
 	 * javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
@@ -57,7 +57,7 @@ public class ImmobilieControl implements ControlBase {
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#doPost(javax.servlet.http.HttpServletRequest,
+	 * @see com.vvw.ControlBase#doPost(javax.servlet.http.HttpServletRequest,
 	 * javax.servlet.http.HttpServletResponse)
 	 */
 	@Override

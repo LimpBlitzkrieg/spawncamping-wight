@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 /**
  * A factory for creating Model objects.
@@ -6,7 +6,7 @@ package weidemann;
 public class ModelFactory extends AbstractFactory {
 
 	/*
-	 * @see weidemann.AbstractFactory#getView(java.lang.String)
+	 * @see com.vvw.AbstractFactory#getView(java.lang.String)
 	 */
 	@Override
 	ViewBase getView(String theView) {
@@ -15,7 +15,7 @@ public class ModelFactory extends AbstractFactory {
 	}
 
 	/*
-	 * @see weidemann.AbstractFactory#getModel(java.lang.String)
+	 * @see com.vvw.AbstractFactory#getModel(java.lang.String)
 	 */
 	@Override
 	ModelBase getModel(String theModel) {
@@ -32,7 +32,7 @@ public class ModelFactory extends AbstractFactory {
 	}
 
 	/*
-	 * @see weidemann.AbstractFactory#getControl(java.lang.String)
+	 * @see com.vvw.AbstractFactory#getControl(java.lang.String)
 	 */
 	@Override
 	ControlBase getControl(String theControl) {

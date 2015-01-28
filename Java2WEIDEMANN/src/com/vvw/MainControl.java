@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,7 +17,7 @@ public class MainControl implements ControlBase{
 	ViewBase itsView = itsViewFactory.getView("MAIN");
 	
 	/*
-	 * @see weidemann.ControlBase#parseXML()
+	 * @see com.vvw.ControlBase#parseXML()
 	 */
 	@Override
 	public void parseXML() {
@@ -26,7 +26,7 @@ public class MainControl implements ControlBase{
 	}
 
 	/*
-	 * @see weidemann.ControlBase#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 * @see com.vvw.ControlBase#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,7 +42,7 @@ public class MainControl implements ControlBase{
 	}
 
 	/*
-	 * @see weidemann.ControlBase#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 * @see com.vvw.ControlBase#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
 	public int doPost(HttpServletRequest request, HttpServletResponse response)

@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 import java.io.IOException;
 

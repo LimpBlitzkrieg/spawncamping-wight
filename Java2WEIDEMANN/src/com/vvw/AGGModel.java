@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 /**
  * The Class AGGModel.
@@ -7,7 +7,7 @@ package weidemann;
 public class AGGModel implements ModelBase{
 	
 	/* (non-Javadoc)
-	 * @see weidemann.ModelBase#setContent(java.lang.String[])
+	 * @see com.vvw.ModelBase#setContent(java.lang.String[])
 	 */
 	@Override
 	public void setContent(String[] theContent) {
@@ -21,7 +21,7 @@ public class AGGModel implements ModelBase{
 	}
 
 	/* (non-Javadoc)
-	 * @see weidemann.ModelBase#getContent()
+	 * @see com.vvw.ModelBase#getContent()
 	 */
 	@Override
 	public String[] getContent() {

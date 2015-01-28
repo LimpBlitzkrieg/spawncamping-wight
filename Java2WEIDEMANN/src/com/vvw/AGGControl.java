@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -11,36 +11,36 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+//
 /**
- * The Class InventarControl.
- * Control class for Inventargegenstand.
+ * The Class AGGControl. Control-Class for Ausstattungsgegenstand.
+ * Controls the models and the views data flow. 
  */
-public class InventarControl implements ControlBase {
+public class AGGControl implements ControlBase {
 
-	/** The Inventar model. */
-	ModelBase itsModel = itsModelFactory.getModel("INV");
+	/** The AGG model. */
+	ModelBase itsModel = itsModelFactory.getModel("AGG");
 
-	/** The Inventar view. */
-	ViewBase itsView = itsViewFactory.getView("INV");
+	/** The AGG view. */
+	ViewBase itsView = itsViewFactory.getView("AGG");
 
-	/** The Inventar date format for time stamping XML-Files. */
+	/** Date format for time stamping XML-filenames */
 	DateFormat itsDateFormat = new SimpleDateFormat("dd_MM_yy_HH_mm_ss");
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#parseXML()
+	 * @see com.vvw.ControlBase#parseXML()
 	 */
 	@Override
 	public void parseXML() {
 		String[] aContent = itsModel.getContent();
-		String aFilename = "INV_" + itsDateFormat.format(itsDate);
+		String aFilename = "AGG_" + itsDateFormat.format(itsDate);
 		itsXMLParser.parseXML(aContent, aFilename);
-
 	}
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#doGet(javax.servlet.http.HttpServletRequest,
+	 * @see com.vvw.ControlBase#doGet(javax.servlet.http.HttpServletRequest,
 	 * javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
@@ -58,7 +58,7 @@ public class InventarControl implements ControlBase {
 
 	/*
 	 * 
-	 * @see weidemann.ControlBase#doPost(javax.servlet.http.HttpServletRequest,
+	 * @see com.vvw.ControlBase#doPost(javax.servlet.http.HttpServletRequest,
 	 * javax.servlet.http.HttpServletResponse)
 	 */
 	@Override
@@ -67,11 +67,10 @@ public class InventarControl implements ControlBase {
 
 		PrintWriter pw = response.getWriter();
 		response.setContentType("text/html");
-		String[] aContent = new String[3];
+		String[] aContent = new String[2];
 		int aBack = 0;
-		String aString = request.getParameter("inv_bez");
-		String aDate = request.getParameter("inv_date");
-		String aPerson = request.getParameter("inv_responsible");
+		String aPlace = request.getParameter("agg_ort");
+		String aDate = request.getParameter("agg_date");
 
 		try {
 			aBack = Integer.parseInt(request.getParameter("return"));
@@ -82,7 +81,7 @@ public class InventarControl implements ControlBase {
 		if (aBack == 1)
 			return -1;
 
-		if (aString.isEmpty() || aPerson.isEmpty() || !validateDate(aDate)) {
+		else if (aPlace == null || aPlace.isEmpty() || !validateDate(aDate)) {
 			itsView.createFelder("Error");
 			itsView.show(pw);
 			pw.flush();
@@ -90,9 +89,8 @@ public class InventarControl implements ControlBase {
 
 			return 0;
 		} else {
-			aContent[0] = aString;
+			aContent[0] = aPlace;
 			aContent[1] = aDate;
-			aContent[2] = aPerson;
 			itsModel.setContent(aContent);
 			parseXML();
 			itsView.createFelder("Success");
@@ -109,7 +107,7 @@ public class InventarControl implements ControlBase {
 	 * Validate date.
 	 *
 	 * @param theDate
-	 *            the the date
+	 *            the date
 	 * @return true, if successful
 	 */
 	public boolean validateDate(String theDate) {
@@ -135,5 +133,4 @@ public class InventarControl implements ControlBase {
 
 		return true;
 	}
-
 }

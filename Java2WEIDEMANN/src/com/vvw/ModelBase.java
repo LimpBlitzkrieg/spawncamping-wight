@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 /**
  * The Interface ModelBase.

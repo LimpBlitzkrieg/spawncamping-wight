@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 /**
  * A factory for creating Control objects.

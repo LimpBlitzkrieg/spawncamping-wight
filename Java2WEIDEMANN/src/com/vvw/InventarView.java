@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 import java.io.PrintWriter;
 
@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 public class InventarView implements ViewBase{
 
 	/*
-	 * @see weidemann.ViewBase#createFelder(java.lang.String)
+	 * @see com.vvw.ViewBase#createFelder(java.lang.String)
 	 */
 	@Override
 	public void createFelder(String theCase) {
@@ -111,7 +111,7 @@ public class InventarView implements ViewBase{
 	}
 	
 	/*
-	 * @see weidemann.ViewBase#deleteFelder()
+	 * @see com.vvw.ViewBase#deleteFelder()
 	 */
 	@Override
 	public void deleteFelder() {
@@ -119,7 +119,7 @@ public class InventarView implements ViewBase{
 	}
 
 	/*
-	 * @see weidemann.ViewBase#show(java.io.PrintWriter)
+	 * @see com.vvw.ViewBase#show(java.io.PrintWriter)
 	 */
 	@Override
 	public void show(PrintWriter aPW) {

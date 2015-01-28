@@ -1,4 +1,4 @@
-package weidemann;
+package com.vvw;
 
 /**
  * The Class InventarModel.
@@ -7,7 +7,7 @@ package weidemann;
 public class InventarModel implements ModelBase{
 		
 	/*
-	 * @see weidemann.ModelBase#setContent(java.lang.String[])
+	 * @see com.vvw.ModelBase#setContent(java.lang.String[])
 	 */
 	@Override
 	public void setContent(String[] theContent) {
@@ -25,7 +25,7 @@ public class InventarModel implements ModelBase{
 
 
 	/*
-	 * @see weidemann.ModelBase#getContent()
+	 * @see com.vvw.ModelBase#getContent()
 	 */
 	@Override
 	public String[] getContent() {
