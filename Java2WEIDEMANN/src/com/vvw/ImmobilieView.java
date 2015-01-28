@@ -78,7 +78,7 @@ public class ImmobilieView implements ViewBase{
 				itsHTDoc.add("</head>");
 				itsHTDoc.add("<body style='font-family:Verdana'>");
 					itsHTDoc.add("<h1><u>Inventarerfassung</u></h1>");
-					itsHTDoc.add("<form name='immForm' action='main' method='POST'>");
+					itsHTDoc.add("<form name='immForm' action='MainServlet' method='POST'>");
 						itsHTDoc.add("<p>Datei wurde erfolgreich angelegt.</p>");
 							itsHTDoc.add("<input type='hidden' name='return' value='1'><input type='submit' name='proceed' value='OK'>");
 					itsHTDoc.add("</form>");

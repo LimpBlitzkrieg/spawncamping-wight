@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * The Class main.
+ * The Class MainServlet.
  * Main servlet to be executed on tomcat server.
  * BE ADVISED: Minimum required tomcat version is 8.0 for this and all according servlets!
  * Get the latest tomcat server at: http://tomcat.apache.org/
  */
-@WebServlet("/main")
-public class main extends HttpServlet {
+@WebServlet("/MainServlet")
+public class MainServlet extends HttpServlet {
 	
 	/** The Constant serialVersionUID. */
 	private static final long serialVersionUID = 1L;
@@ -23,13 +23,13 @@ public class main extends HttpServlet {
 	/** The control factory. */
 	AbstractFactory itsControlFactory = FactoryProducer.getFactory("CONTROL");
 	
-	/** The main control. */
+	/** The MainServlet control. */
 	ControlBase itsControl = itsControlFactory.getControl("MAIN");
        
     /**
-     * Instantiates a new main.
+     * Instantiates a new MainServlet.
      */
-    public main() {
+    public MainServlet() {
     	super();
     }
     
