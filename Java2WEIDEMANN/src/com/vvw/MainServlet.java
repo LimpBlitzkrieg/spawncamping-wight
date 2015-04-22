@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  * BE ADVISED: Minimum required tomcat version is 8.0 for this and all according servlets!
  * Get the latest tomcat server at: http://tomcat.apache.org/
  */
-@WebServlet("/MainServlet")
+@WebServlet("/")
 public class MainServlet extends HttpServlet {
 	
 	/** The Constant serialVersionUID. */
